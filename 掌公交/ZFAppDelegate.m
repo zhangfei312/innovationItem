@@ -7,7 +7,7 @@
 //
 
 #import "ZFAppDelegate.h"
-
+#import "BusLineViewController.h"
 @implementation ZFAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -16,7 +16,54 @@
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    //启动百度引擎
+    BMKMapManager *mapManager = [[BMKMapManager alloc]init];
+    // 如果要关注网络及授权验证事件，请设定generalDelegate参数
+    BOOL ret = [mapManager start:@"TN9CjZzsOq41lpqP1pzvGZVQ" generalDelegate:self];
+    if (!ret) {
+        NSLog(@"百度引擎启动失败!");
+    }
+    NSLog(@"百度引擎启动成功！");
+    
+    //高德地图SDK授权
+    [MAMapServices sharedServices].apiKey =@"d194a3390fc706293b8bb612d67269cb";
+    
+    [self createTabBarController];//创建总的控制器
+    
     return YES;
+}
+
+//此方法用于创建总的控制器，为tabBarController
+- (void)createTabBarController{
+    BusViewController *busView = [[BusViewController alloc]init];
+    UINavigationController *zfbusNavigation = [[UINavigationController alloc]initWithRootViewController:busView];
+    busView.title = @"掌公交";
+    busView.tabBarItem.image = [UIImage imageNamed:@"1.png"];
+    
+    
+    SearchViewController *searchView = [[SearchViewController alloc]init];
+    UINavigationController *zfsearchNavigation = [[UINavigationController alloc]initWithRootViewController:searchView];
+    searchView.title = @"查询";
+    searchView.tabBarItem.image = [UIImage imageNamed:@"2.png"];
+    
+    BusLineViewController *mapView = [[BusLineViewController alloc]init];
+    UINavigationController *zfmapNavigation = [[UINavigationController alloc]initWithRootViewController:mapView];
+    mapView.title = @"地图";
+    mapView.tabBarItem.image = [UIImage imageNamed:@"3.png"];
+    
+    MoreViewController *moreView = [[MoreViewController alloc]init];
+    UINavigationController *zfmoreNavigation = [[UINavigationController alloc]initWithRootViewController:moreView];
+    moreView.title = @"设置";
+    moreView.tabBarItem.image = [UIImage imageNamed:@"4.png"];
+    
+    NSArray *tabBarControllerArray = [NSArray arrayWithObjects:zfbusNavigation,zfsearchNavigation,zfmapNavigation,zfmoreNavigation, nil];
+    
+    UITabBarController *zftabBarcontroller = [[UITabBarController alloc]init];
+    zftabBarcontroller.viewControllers = tabBarControllerArray;
+    zftabBarcontroller.delegate = self;
+    
+    self.window.rootViewController = zftabBarcontroller;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

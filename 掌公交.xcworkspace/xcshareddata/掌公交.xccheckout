@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>D48275FC-D296-47E3-9CAF-FE257720F1A8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>掌公交</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>329B0F17-24FE-42B0-9BB8-840A62889F4F</key>
+		<string>https://github.com/zhangfei312/innovationItem.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>掌公交.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>329B0F17-24FE-42B0-9BB8-840A62889F4F</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhangfei312/innovationItem.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>329B0F17-24FE-42B0-9BB8-840A62889F4F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>329B0F17-24FE-42B0-9BB8-840A62889F4F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>掌公交</string>
+		</dict>
+	</array>
+</dict>
+</plist>
