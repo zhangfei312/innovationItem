@@ -1,1 +1,14 @@
-../../../AMap3DMap/MAMapKit.framework/Versions/2.4.2.c9ef2cc.60159/Headers/MAOfflineItemCommonCity.h
+//
+//  MAOfflineItemCommonCity.h
+//  MapKit_static
+//
+//  Created by songjian on 14-4-23.
+//  Copyright (c) 2014年 songjian. All rights reserved.
+//
+
+#import "MAOfflineCity.h"
+
+/* 普通城市. */
+@interface MAOfflineItemCommonCity : MAOfflineCity
+
+@end
