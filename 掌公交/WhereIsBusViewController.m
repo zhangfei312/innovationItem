@@ -16,6 +16,8 @@
     float x,y;
     ZFAnation *anation;
     UITextField *searchFiled;
+    NSDictionary *resultData;//用于储存返回来的数据
+    NSArray *recommendedData;//用于储存推荐的数据
 }
 
 @end
@@ -33,7 +35,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    //self.view.backgroundColor = [UIColor colorWithRed:236 green:243 blue:255 alpha:1];
+    self.view.backgroundColor = [UIColor orangeColor];
     /*
      
      在进行界面设计时候注释的地图功能
@@ -60,19 +63,17 @@
      */
     
     [self initSearch];
+    [self initRecommendedData];
+    [self setButton];
     
 }
 
 //获取实时公交数据的方法
--(void) fecthInformation{
+-(void) fecthInformation:(NSString *)requestString{
     NSError *error;
-    NSString *requestString = [NSString stringWithFormat:@"http://apis.juhe.cn/szbusline/bus?key=%@&stationCode=EFP&dtype=json",keyValueString];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-    NSArray *result = [resultData valueForKey:@"result"];
-    NSLog(@"%@",result);
-    NSLog(@"%@",[result[0] valueForKey:@"FromTo"]);
+    resultData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
 }
 
 //初始化搜索框
@@ -82,8 +83,10 @@
     searchFiled.clearButtonMode = UITextFieldViewModeAlways;
     searchFiled.clearsOnBeginEditing = YES;
     searchFiled.alpha = 0.7;
-    searchFiled.text = @"请输入站台名称或者线路名";
+    searchFiled.placeholder = @"请输入站台名称或者线路名";
     searchFiled.delegate = self;
+    searchFiled.clearButtonMode = UITextFieldViewModeAlways;
+    searchFiled.clearsOnBeginEditing = YES;
     [searchFiled addTarget:self action:@selector(exitKeyBoard:) forControlEvents:(UIControlEventEditingDidEndOnExit)];
     [self.view addSubview:searchFiled];
     
@@ -91,6 +94,57 @@
     UIButton *exitKeyboard = [[UIButton alloc]initWithFrame:CGRectMake(0, 108, self.view.bounds.size.width, self.view.bounds.size.height-108)];
     [exitKeyboard addTarget:self action:@selector(exitBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:exitKeyboard];
+    
+    
+    
+}
+//6个Button的设计
+-(void)setButton{
+    int width = 100;
+    int height = 30;
+    
+    UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(5, 135, width, height)];
+    UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(10+width, 135, width, height)];
+    UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(15+width*2, 135, width, height)];
+    UIButton *btn4 = [[UIButton alloc]initWithFrame:CGRectMake(5, 185, width, height)];
+    UIButton *btn5 = [[UIButton alloc]initWithFrame:CGRectMake(10+width, 185, width, height)];
+    UIButton *btn6 = [[UIButton alloc]initWithFrame:CGRectMake(15+width*2, 185, width, height)];
+    
+    //NSArray *button = [[NSArray alloc]initWithObjects:btn1,btn2,btn3,btn4,btn5,btn6,nil];
+    
+    [btn1 setTitle:recommendedData[0] forState:UIControlStateNormal];
+    [btn2 setTitle:recommendedData[1] forState:UIControlStateNormal];
+    [btn3 setTitle:recommendedData[2] forState:UIControlStateNormal];
+    [btn4 setTitle:recommendedData[3] forState:UIControlStateNormal];
+    [btn5 setTitle:recommendedData[4] forState:UIControlStateNormal];
+    [btn6 setTitle:recommendedData[5] forState:UIControlStateNormal];
+    
+    btn1.backgroundColor = [UIColor colorWithWhite:0.4 alpha:0.3];
+    btn2.backgroundColor = [UIColor colorWithRed:0.3 green:0.1 blue:0.4 alpha:0.8];
+    btn3.backgroundColor = [UIColor colorWithRed:0.9 green:0.5 blue:0.9 alpha:0.8];
+    btn4.backgroundColor = [UIColor colorWithRed:0.4 green:0.5 blue:0.1 alpha:0.8];
+    btn5.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.1 alpha:0.8];
+    btn6.backgroundColor = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:0.5];
+    
+    [self.view addSubview:btn1];
+    [self.view addSubview:btn2];
+    [self.view addSubview:btn3];
+    [self.view addSubview:btn4];
+    [self.view addSubview:btn5];
+    [self.view addSubview:btn6];
+    
+}
+
+//初始或推荐数据
+-(void)initRecommendedData{
+    recommendedData = [NSArray arrayWithObjects:@"13路",@"人民广场",@"239路",@"南湖广场",@"朝阳桥",@"80路",nil];
+}
+//根据线路名称查询
+-(void)searchByRoute{
+    
+}
+//根据站台查询方法
+-(void)searchByStation{
     
 }
 //点击空白背景时会退出键盘

@@ -34,11 +34,9 @@
 //    [self.view sendSubviewToBack:imageView];
     // Do any additional setup after loading the view from its nib.
     [self initSomeButton];
-    NSLog(@"fdgfhgyu");
 }
 #pragma mark 初始化查询以及下面的几个按钮
 - (void)initSomeButton{
-    NSLog(@"开始初始化！");
     UIButton *searchButton = [[UIButton alloc]initWithFrame:CGRectMake(25, (self.view.bounds.origin.y-150), 226, 30)];
     searchButton.backgroundColor = [UIColor orangeColor];
     [searchButton setTitle:@"查询" forState:UIControlStateNormal];
