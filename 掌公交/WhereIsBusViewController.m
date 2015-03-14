@@ -9,9 +9,13 @@
 #import "WhereIsBusViewController.h"
 #import "ZFAnation.h"
 #import "WXAnation.h"
-@interface WhereIsBusViewController ()<MKMapViewDelegate,CLLocationManagerDelegate>{
+
+#define keyValueString @"24de84ea5b588fcdfc82b996c04f13c3"
+
+@interface WhereIsBusViewController ()<MKMapViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate>{
     float x,y;
     ZFAnation *anation;
+    UITextField *searchFiled;
 }
 
 @end
@@ -29,6 +33,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /*
+     
+     在进行界面设计时候注释的地图功能
     
     _mapView = [[MKMapView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
     _mapView.delegate = self;
@@ -48,7 +56,52 @@
     [self.view addSubview:_mapView];
     
     [self startPating];
+     
+     */
+    
+    [self initSearch];
+    
 }
+
+//获取实时公交数据的方法
+-(void) fecthInformation{
+    NSError *error;
+    NSString *requestString = [NSString stringWithFormat:@"http://apis.juhe.cn/szbusline/bus?key=%@&stationCode=EFP&dtype=json",keyValueString];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
+    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+    NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+    NSArray *result = [resultData valueForKey:@"result"];
+    NSLog(@"%@",result);
+    NSLog(@"%@",[result[0] valueForKey:@"FromTo"]);
+}
+
+//初始化搜索框
+-(void)initSearch{
+    searchFiled = [[UITextField alloc]initWithFrame:CGRectMake(2, 68, 316, 40)];
+    searchFiled.borderStyle = UITextBorderStyleRoundedRect;
+    searchFiled.clearButtonMode = UITextFieldViewModeAlways;
+    searchFiled.clearsOnBeginEditing = YES;
+    searchFiled.alpha = 0.7;
+    searchFiled.text = @"请输入站台名称或者线路名";
+    searchFiled.delegate = self;
+    [searchFiled addTarget:self action:@selector(exitKeyBoard:) forControlEvents:(UIControlEventEditingDidEndOnExit)];
+    [self.view addSubview:searchFiled];
+    
+    //用于点击空白处退出键盘的button
+    UIButton *exitKeyboard = [[UIButton alloc]initWithFrame:CGRectMake(0, 108, self.view.bounds.size.width, self.view.bounds.size.height-108)];
+    [exitKeyboard addTarget:self action:@selector(exitBtnMethod:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:exitKeyboard];
+    
+}
+//点击空白背景时会退出键盘
+-(void)exitBtnMethod:(id)sender{
+    [searchFiled resignFirstResponder];
+}
+//点击return时候会退出键盘
+- (void)exitKeyBoard:(id)sender {
+    [sender resignFirstResponder];
+}
+
 - (void)creatAnnotation{
     x = 43.860657;
     y = 125.295838;
