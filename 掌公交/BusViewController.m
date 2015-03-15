@@ -105,13 +105,12 @@
 //        [self.navigationController pushViewController:result animated:YES];
         
     }else{
-        NSLog(@"aaaaaaaaaa");
         result.hidesBottomBarWhenPushed = YES;//隐藏tabBar
         [self.navigationController pushViewController:result animated:YES];
         
         
     }
-    
+    NSLog(@"----------------------------------------");
 }
 
 - (IBAction)goHome:(UIButton *)sender {

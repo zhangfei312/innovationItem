@@ -61,7 +61,7 @@
     for (int i = 0; i < [bus_array count]; i++) {
         
         NSDictionary *bus_array1 = bus_array[i];
-        NSLog(@"条数:%i",[bus_array count]);
+        //NSLog(@"条数:%i",[bus_array count]);
         NSDictionary *bus_array1_segments = [bus_array1 valueForKey:@"segments"];
         NSArray *bus_array1_segments_segment = [bus_array1_segments valueForKey:@"segment"];
         NSDictionary *detail = bus_array1_segments_segment[0];

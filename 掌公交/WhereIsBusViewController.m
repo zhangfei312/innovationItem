@@ -9,7 +9,7 @@
 #import "WhereIsBusViewController.h"
 #import "ZFAnation.h"
 #import "WXAnation.h"
-
+#import "BusRealTimeResultViewController.h"
 #define keyValueString @"24de84ea5b588fcdfc82b996c04f13c3"
 
 @interface WhereIsBusViewController ()<MKMapViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate>{
@@ -147,6 +147,20 @@
     btn5.backgroundColor = [UIColor colorWithRed:0.8 green:0.8 blue:0.1 alpha:0.8];
     btn6.backgroundColor = [UIColor colorWithRed:0.8 green:0.1 blue:0.1 alpha:0.5];
     
+    [btn1 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn2 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn3 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn4 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn5 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [btn6 addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+    
+    btn1.tag = 1;
+    btn2.tag = 2;
+    btn3.tag = 3;
+    btn4.tag = 4;
+    btn5.tag = 5;
+    btn6.tag = 6;
+    
     [self.view addSubview:btn1];
     [self.view addSubview:btn2];
     [self.view addSubview:btn3];
@@ -154,6 +168,57 @@
     [self.view addSubview:btn5];
     [self.view addSubview:btn6];
     
+}
+
+//推荐按钮响应方法
+- (void)btnClick:(UIButton *)sender{
+    long tag = sender.tag;
+    switch (tag) {
+        case 1:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];
+        }
+            break;
+        case 2:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];        }
+            break;
+        case 3:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];
+        }
+            break;
+        case 4:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];
+        }
+            break;
+        case 5:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];
+        }
+            break;
+        case 6:{
+            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            realTimeView.btnString = sender.titleLabel.text;
+            [self.navigationController pushViewController:realTimeView animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
+    
+}
+
+//搜索框编辑调用
+- (void)searchResult:(NSString *)editContent{
+    BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+    [self.navigationController popToViewController:realTimeView animated:YES];
 }
 
 //初始或推荐数据
