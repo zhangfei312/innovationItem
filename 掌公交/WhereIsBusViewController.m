@@ -18,6 +18,7 @@
     UITextField *searchFiled;
     NSDictionary *resultData;//用于储存返回来的数据
     NSArray *recommendedData;//用于储存推荐的数据
+    NSUserDefaults *busRoadLineInform;//公交线路详情数据
 }
 
 @end
@@ -35,7 +36,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //self.view.backgroundColor = [UIColor colorWithRed:236 green:243 blue:255 alpha:1];
+    
     self.view.backgroundColor = [UIColor orangeColor];
     /*
      
@@ -69,11 +70,31 @@
 }
 
 //获取实时公交数据的方法
--(void) fecthInformation:(NSString *)requestString{
+-(id) getInformation:(NSString *)requestString{
     NSError *error;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
-    resultData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+    NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+    return result;
+}
+
+//获取公交车的详细路线的方法，对于网络数据只获取一次
+-(id) getBusLineInformation{
+    busRoadLineInform = [NSUserDefaults standardUserDefaults];
+    if ([busRoadLineInform objectForKey:@"busRoadLineInform"]) {
+        resultData = [busRoadLineInform objectForKey:@"busRoadLineInform"];
+    }else{
+        NSLog(@"这是第一次获取数据！");
+        NSError *error;
+        NSString *requestString = [NSString stringWithFormat:@"http://apis.juhe.cn/szbusline/info?key=%@&dtype=json",keyValueString];
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+        NSDictionary *result = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
+        [busRoadLineInform setObject:result forKey:@"busRoadLineInform"];
+        [busRoadLineInform synchronize];
+    }
+    NSDictionary *result = [busRoadLineInform objectForKey:@"busRoadLineInform"];
+    return result;
 }
 
 //初始化搜索框
