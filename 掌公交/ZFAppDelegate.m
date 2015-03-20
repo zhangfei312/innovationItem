@@ -80,6 +80,7 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    NSLog(@"应用即将进入前台！");
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
@@ -91,6 +92,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+//此函数是用于通过URL来调用应用程序的处理方法
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    NSLog(@"从%@传来的调用",sourceApplication);
+    NSLog(@"传入的URL是：%@",url);
+    
+    return YES;
 }
 
 @end

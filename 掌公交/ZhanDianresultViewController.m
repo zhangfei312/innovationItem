@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"线路详情----------------------------------%@",resultValue);
 	// Do any additional setup after loading the view.
     NSArray *array = [resultValue componentsSeparatedByString:@";"];
     for (int i = 0; i < [array count]; i++) {

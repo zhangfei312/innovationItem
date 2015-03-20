@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor orangeColor];
+    //self.view.backgroundColor = [UIColor orangeColor];
     /*
      
      在进行界面设计时候注释的地图功能
