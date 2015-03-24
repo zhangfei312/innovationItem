@@ -63,6 +63,7 @@
 		9EAA0DFF1A68A9FF006FF072 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF71A68A9FF006FF072 /* AboutUsViewController.xib */; };
 		9EAA0E001A68A9FF006FF072 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF91A68A9FF006FF072 /* TempViewController.m */; };
 		9EAA0E021A68AA14006FF072 /* serch2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0E011A68AA14006FF072 /* serch2.jpg */; };
+		9EE1B89B1ABC304700F1AF0B /* ZFLineDeatialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */; };
 		9EE5F6631AB58DF7008FBFB3 /* BusRealTimeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5F6621AB58DF7008FBFB3 /* BusRealTimeResultViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -223,6 +224,8 @@
 		9EAA0DF81A68A9FF006FF072 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		9EAA0DF91A68A9FF006FF072 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		9EAA0E011A68AA14006FF072 /* serch2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serch2.jpg; sourceTree = "<group>"; };
+		9EE1B8991ABC304700F1AF0B /* ZFLineDeatialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLineDeatialViewController.h; sourceTree = "<group>"; };
+		9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLineDeatialViewController.m; sourceTree = "<group>"; };
 		9EE5F6611AB58DF7008FBFB3 /* BusRealTimeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusRealTimeResultViewController.h; sourceTree = "<group>"; };
 		9EE5F6621AB58DF7008FBFB3 /* BusRealTimeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusRealTimeResultViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -398,6 +401,8 @@
 				9EAA0DD01A68A9C3006FF072 /* ZhanDianSearchResultViewController.m */,
 				9EAA0DD11A68A9C3006FF072 /* ZhanDianresultViewController.h */,
 				9EAA0DD21A68A9C3006FF072 /* ZhanDianresultViewController.m */,
+				9EE1B8991ABC304700F1AF0B /* ZFLineDeatialViewController.h */,
+				9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */,
 			);
 			name = Search;
 			sourceTree = "<group>";
@@ -677,6 +682,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EE1B89B1ABC304700F1AF0B /* ZFLineDeatialViewController.m in Sources */,
 				9E7231951A6796D1004ED4D3 /* ZFAppDelegate.m in Sources */,
 				9EAA0DD31A68A9C3006FF072 /* SearchViewController.m in Sources */,
 				9EAA0DD51A68A9C3006FF072 /* ZhanDianresultViewController.m in Sources */,

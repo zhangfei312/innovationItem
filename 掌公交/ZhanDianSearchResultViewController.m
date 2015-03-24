@@ -14,6 +14,7 @@
     UILabel *lable2;
     NSMutableArray *dataSource1;//用于存放公交车信息
     NSMutableArray *dataSource2;
+    UITableView *resultTabview;
 }
 
 @end
@@ -37,10 +38,22 @@
     dataSource1 = [[NSMutableArray alloc]init];
     dataSource2 = [[NSMutableArray alloc]init];
     NSLog(@"zhandian:%@",zhandianValue);
+    resultTabview = [[UITableView alloc]init];
     [self creatResultTabview];
+    
+    [resultTabview setScrollEnabled:NO];
+    [self setExtraCellLineHidden:resultTabview];
+    
     [self requestBusInformation];
     [self creatResultFrame];
 	// Do any additional setup after loading the view.
+}
+//用于隐藏没有用的横线
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
 }
 
 //此方法用于请求查询公交信息
@@ -77,10 +90,10 @@
     view1.alpha = 0.2;
     [self.view addSubview:view1];
     
-    
 }
 - (void)creatResultTabview{
-    UITableView *resultTabview = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 800) style:UITableViewStylePlain];
+    resultTabview.frame = CGRectMake(0, 60, 320, 800);
+    //resultTabview = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 800) style:UITableViewStylePlain];
     resultTabview.dataSource = self;
     resultTabview.delegate = self;
     [self.view addSubview:resultTabview];
@@ -108,9 +121,8 @@
     int i = indexPath.row;
     
     NSString *temp = dataSource2[i];
-    //NSLog(@"i:%i,temp:%@",i,temp);
     cot.resultValue = temp;
-    
+    cot.zhanDianString = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     [self.navigationController pushViewController:cot animated:YES];
 }
 - (void)didReceiveMemoryWarning

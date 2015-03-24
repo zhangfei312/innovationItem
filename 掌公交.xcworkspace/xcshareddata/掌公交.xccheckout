@@ -12,22 +12,34 @@
 	<dict>
 		<key>329B0F17-24FE-42B0-9BB8-840A62889F4F</key>
 		<string>https://github.com/zhangfei312/innovationItem.git</string>
+		<key>C2B7E12DFF1AD567A536C6EFF70A33277D5311A3</key>
+		<string>https://github.com/zhangfei312/innovationItem.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>掌公交.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>329B0F17-24FE-42B0-9BB8-840A62889F4F</key>
+		<string>../../掌公交</string>
+		<key>C2B7E12DFF1AD567A536C6EFF70A33277D5311A3</key>
 		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/zhangfei312/innovationItem.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>329B0F17-24FE-42B0-9BB8-840A62889F4F</string>
+	<string>C2B7E12DFF1AD567A536C6EFF70A33277D5311A3</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C2B7E12DFF1AD567A536C6EFF70A33277D5311A3</string>
+			<key>IDESourceControlWCCName</key>
+			<string>%E6%8E%8C%E5%85%AC%E4%BA%A4</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

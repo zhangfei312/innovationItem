@@ -10,4 +10,5 @@
 
 @interface ZhanDianresultViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,retain)NSString *resultValue;
+@property(nonatomic,retain)NSString *zhanDianString;
 @end
