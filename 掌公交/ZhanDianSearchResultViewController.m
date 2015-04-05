@@ -60,7 +60,7 @@
 - (void)requestBusInformation{
     NSError *error;
     //首先加载一个NSURL对象
-    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetStationInfo?city=%@&station=%@",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[zhandianValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetStationInfo?city=%@&station=%@&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[zhandianValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     //弄一个NSData对象，用来装返回的数据
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];

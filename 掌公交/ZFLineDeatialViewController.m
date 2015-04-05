@@ -10,18 +10,24 @@
 
 @interface ZFLineDeatialViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSString *line;
+    NSMutableArray *lineInformation;
 }
 
 @end
 
 @implementation ZFLineDeatialViewController
-
+@synthesize receive = _receive;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self creatResultFrame];
+    
+    NSLog(@"print _receive :%@",_receive);
     
     [self creatResultTable];
+    
+    [self creatResultFrame];
+    
+    [self getLineInformation];
     
     
 }
@@ -29,7 +35,8 @@
 - (void)creatResultFrame{
     UILabel *dataLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 20)];
     dataLable.textAlignment = NSTextAlignmentCenter;
-    dataLable.text = [NSString stringWithFormat:@"%@线路详情",[self getOnlyNum:_receive]];
+    dataLable.text = [NSString stringWithFormat:@"%@线路详情",[self getOnlyNum:_receive][0]];
+    dataLable.textAlignment = NSTextAlignmentCenter;
     [self.view addSubview:dataLable];
     UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(20, 110, self.view.frame.size.width, 1)];
     view1.backgroundColor = [UIColor grayColor];
@@ -55,9 +62,9 @@
 //从字符串中取出数字
 - (NSArray *)getOnlyNum:(NSString *)str
 {
-    
     NSString *onlyNumStr = [str stringByReplacingOccurrencesOfString:@"[^0-9,]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, [str length])];
     NSArray *numArr = [onlyNumStr componentsSeparatedByString:@","];
+    NSLog(@"从字符串中取出来的数字是：%@",numArr);
     return numArr;
 }
 
@@ -67,27 +74,28 @@
     //首先加载一个NSURL对象
     
     NSArray *lin = [self getOnlyNum:_receive];
-    int busLine = (int)lin[0];
-    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetLineInfo?city%@=&line=%i",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],busLine];
+    NSLog(@"%@",lin);
+    int busLine = [lin[0] intValue];
+    
+    NSLog(@"busline:%i",busLine);
+    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetLineInfo?city%@=&line=%i&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],busLine];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     //弄一个NSData对象，用来装返回的数据
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     //弄一个字典，用NSJSONSerialization把data数据解析出来。
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
     NSArray *busline = [dic valueForKey:@"data"];
-    
+    lineInformation = [[NSMutableArray alloc]init];
     for (int i = 0; i < busline.count; i++) {
-        NSMutableArray *temp = [[NSMutableArray alloc]init];
         NSString *s = [busline[i] valueForKey:@"name"];
         int t = (int)[self getOnlyNum:s][0];
         
         if (t == busLine) {
-            [temp addObject:s];
+            [lineInformation addObject:s];
         }
-        NSLog(@"%@",temp);
+        NSLog(@"解析的数据：%@",lineInformation);
     }
-    
-    return nil;
+    return lineInformation;
 }
 
 - (void)creatResultTable{
@@ -99,7 +107,7 @@
     [self setExtraCellLineHidden:resultView];
     
     [self.view addSubview:resultView];
-    
+//去掉tabview中多余的横线
 }- (void)setExtraCellLineHidden: (UITableView *)tableView
 {
     UIView *view =[ [UIView alloc]init];
@@ -118,23 +126,19 @@
     
     UITableViewCell *myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     
-    myCell.textLabel.text  =@"";
-    
-    [myCell addSubview:[self creatAView:myCell.bounds.origin.x+100 andY:myCell.bounds.origin.y+20]];
-    
-    
+    if (indexPath.row % 2 == 0) {
+        myCell.textLabel.text  =@"nihao";
+        myCell.textLabel.textAlignment = NSTextAlignmentCenter;
+    }else{
+        [myCell addSubview:[self creatAView:myCell.bounds.size.width/2 andY:myCell.bounds.origin.y+20]];
+    }
     myCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     myCell.backgroundColor = [UIColor clearColor];
     return myCell;
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
-    
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

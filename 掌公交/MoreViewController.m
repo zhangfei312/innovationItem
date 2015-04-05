@@ -36,7 +36,7 @@
     
     myTableView.dataSource = self ;//设置当前控制器为数据源提供者
     myTableView.delegate = self;//设置当前控制器为代理
-    NSArray *sectionOne = [NSArray arrayWithObjects:@"切换城市",@"离线数据",@"清空缓存", nil];
+    NSArray *sectionOne = [NSArray arrayWithObjects:@"切换城市",@"回家设置",@"离线数据",@"清空缓存", nil];
     NSArray *sectionTwo = [NSArray arrayWithObjects:@"检测版本", nil];
     NSArray *sectionThere = [NSArray arrayWithObjects:@"意见反馈",@"关于我们",@"用户协议", nil];
     

@@ -11,6 +11,7 @@
 #import "GoHomeViewController.h"
 #import "WhereIsBusViewController.h"
 #import "WhereAmIViewController.h"
+#import "ZFLineDeatialViewController.h"
 @interface BusViewController ()<UIAlertViewDelegate>
 
 @end
@@ -101,9 +102,6 @@
         NSLog(@"你没有输入任何信息");
         UIAlertView *alterView = [[UIAlertView alloc]initWithTitle:@"请输入起点和终点！" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alterView show];
-//        result.hidesBottomBarWhenPushed = YES;//隐藏tabBar
-//        [self.navigationController pushViewController:result animated:YES];
-        
     }else{
         result.hidesBottomBarWhenPushed = YES;//隐藏tabBar
         [self.navigationController pushViewController:result animated:YES];

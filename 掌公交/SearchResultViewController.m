@@ -8,8 +8,7 @@
 
 #import "SearchResultViewController.h"
 #import "BusViewController.h"
-
-
+#import "ZFLineDeatialViewController.h"
 @interface SearchResultViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSString *busString;
     UILabel *lable1;
@@ -40,15 +39,13 @@
     [self creatResultFrame];
     [self requestBusInformation];
     [self creatResultTabview];
-    
-	// Do any additional setup after loading the view.
 }
 
 //此方法用于请求查询公交信息
 - (void)requestBusInformation{
     NSError *error;
     //首先加载一个NSURL对象
-    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetTransferInfo?city=%@&start=%@&end=%@",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[startValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[endValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetTransferInfo?city=%@&start=%@&end=%@&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[startValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[endValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     //弄一个NSData对象，用来装返回的数据
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -87,14 +84,19 @@
     CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 0.807, 0.814, 0.788, 1.000 });
     [button.layer setBorderColor:colorref];
     
-    lable1 = [[UILabel alloc]initWithFrame:CGRectMake(15, 90, 299, 45)];
+    lable1 = [[UILabel alloc]initWithFrame:CGRectMake(20, 110, 299, 45)];
     lable1.text = startValue;//@"起点：延安大街";
-    lable2 = [[UILabel alloc]initWithFrame:CGRectMake(15, 130, 299, 45)];
+    lable2 = [[UILabel alloc]initWithFrame:CGRectMake(225, 110, 299, 45)];
     lable2.text  =endValue;//@"终点：修正路";
+    
+    UIButton *busDirection = [[UIButton alloc]initWithFrame:CGRectMake(110, 127, 100, 10)];
+    [busDirection setImage:[UIImage imageNamed:@"busDirection.png"] forState:UIControlStateNormal];
+    
     
     [self.view addSubview:button];
     [self.view addSubview:lable1];
     [self.view addSubview:lable2];
+    [self.view addSubview:busDirection];
     
 }
 - (void)creatResultTabview{
@@ -120,19 +122,15 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableView *secondView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-    
-    UIViewController *cot = [[UIViewController alloc] init];
-    
-    [cot.view addSubview:secondView];
-    
-    [self.navigationController pushViewController:cot animated:YES];
+    ZFLineDeatialViewController *ld = [[ZFLineDeatialViewController alloc]init];
+    ld.receive = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+    NSLog(@"传入的线路是：%@",[tableView cellForRowAtIndexPath:indexPath].textLabel.text);
+    [self.navigationController pushViewController:ld animated:YES];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end
