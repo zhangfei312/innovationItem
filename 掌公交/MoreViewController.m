@@ -11,6 +11,7 @@
 #import "IdeaBackViewController.h"
 #import "VersionUpgradeViewController.h"
 #import "AboutUsViewController.h"
+#import "ChangCityViewController.h"
 @interface MoreViewController (){
     NSArray *_Source;//cell上显示的数据
     int a;
@@ -24,7 +25,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
     }
     return self;
 }
@@ -32,14 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UITableView *myTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     
+    UITableView *myTableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
     myTableView.dataSource = self ;//设置当前控制器为数据源提供者
     myTableView.delegate = self;//设置当前控制器为代理
+    
     NSArray *sectionOne = [NSArray arrayWithObjects:@"切换城市",@"回家设置",@"离线数据",@"清空缓存", nil];
     NSArray *sectionTwo = [NSArray arrayWithObjects:@"检测版本", nil];
     NSArray *sectionThere = [NSArray arrayWithObjects:@"意见反馈",@"关于我们",@"用户协议", nil];
-    
     NSArray *shuju = [NSArray arrayWithObjects:sectionOne,sectionTwo,sectionThere,nil];
     _Source = shuju;
     //@"nihao",@"wohao",@"dajiahao"
@@ -79,16 +79,10 @@
      indexPath.row标识具体哪一行
      */
     UITableViewCell *myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];//基本初始化都选这个
-    
-    
-    
     //    myCell.textLabel.text = @"myCell";//设置cell上显示的文字
     myCell.textLabel.text  = _Source[indexPath.section][indexPath.row];
-    
     myCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
     myCell.backgroundColor = [UIColor clearColor];
-    
     return myCell;
 }
 
@@ -109,7 +103,7 @@
                 case 0:
                 {
                     NSLog(@"section:%ld;row:%ld",(long)indexPath.section,(long)indexPath.row);
-                    TempViewController *temp = [[TempViewController alloc]init];
+                    ChangCityViewController *temp = [[ChangCityViewController alloc]init];
                     temp.hidesBottomBarWhenPushed  =YES;
                     [self.navigationController pushViewController:temp animated:YES];
                 }

@@ -16,7 +16,7 @@
 		9E7231891A6796D1004ED4D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7231881A6796D1004ED4D3 /* UIKit.framework */; };
 		9E72318F1A6796D1004ED4D3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E72318D1A6796D1004ED4D3 /* InfoPlist.strings */; };
 		9E7231911A6796D1004ED4D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7231901A6796D1004ED4D3 /* main.m */; };
-		9E7231951A6796D1004ED4D3 /* ZFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E7231941A6796D1004ED4D3 /* ZFAppDelegate.m */; };
+		9E7231951A6796D1004ED4D3 /* ZFAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9E7231941A6796D1004ED4D3 /* ZFAppDelegate.mm */; };
 		9E7231971A6796D1004ED4D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9E7231961A6796D1004ED4D3 /* Images.xcassets */; };
 		9E72319E1A6796D1004ED4D3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E72319D1A6796D1004ED4D3 /* XCTest.framework */; };
 		9E72319F1A6796D1004ED4D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7231841A6796D1004ED4D3 /* Foundation.framework */; };
@@ -38,12 +38,16 @@
 		9E7231E21A68A085004ED4D3 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7231E11A68A085004ED4D3 /* OpenGLES.framework */; };
 		9E7231E41A68A095004ED4D3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7231E31A68A095004ED4D3 /* SystemConfiguration.framework */; };
 		9E7231E61A68A0AA004ED4D3 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7231E51A68A0AA004ED4D3 /* Security.framework */; };
+		9E85DB0A1AD2160400861D88 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E85DB091AD2160400861D88 /* MapKit.framework */; };
+		9E85DB651AD23DCB00861D88 /* AnnotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E85DB641AD23DCB00861D88 /* AnnotationViewController.m */; };
+		9E85DB671AD251D700861D88 /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E85DB661AD251D700861D88 /* heart.png */; };
+		9E85DB6B1AD2565700861D88 /* ChangCityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E85DB691AD2565700861D88 /* ChangCityViewController.m */; };
+		9E85DB6C1AD2565700861D88 /* ChangCityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E85DB6A1AD2565700861D88 /* ChangCityViewController.xib */; };
 		9EAA0D731A68A664006FF072 /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EAA0D721A68A664006FF072 /* libbaidumapapi.a */; };
 		9EAA0DBA1A68A934006FF072 /* WXAnation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DB71A68A934006FF072 /* WXAnation.m */; };
 		9EAA0DBB1A68A934006FF072 /* ZFAnation.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DB91A68A934006FF072 /* ZFAnation.m */; };
 		9EAA0DC71A68A99D006FF072 /* BusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0DBC1A68A99D006FF072 /* BusViewController.xib */; };
 		9EAA0DC81A68A99D006FF072 /* BusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DBE1A68A99D006FF072 /* BusViewController.m */; };
-		9EAA0DC91A68A99D006FF072 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DC01A68A99D006FF072 /* SearchResultViewController.m */; };
 		9EAA0DCA1A68A99D006FF072 /* GoHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DC21A68A99D006FF072 /* GoHomeViewController.m */; };
 		9EAA0DCB1A68A99D006FF072 /* WhereIsBusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DC41A68A99D006FF072 /* WhereIsBusViewController.m */; };
 		9EAA0DCC1A68A99D006FF072 /* WhereAmIViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DC61A68A99D006FF072 /* WhereAmIViewController.m */; };
@@ -66,8 +70,12 @@
 		9EAA0DFF1A68A9FF006FF072 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF71A68A9FF006FF072 /* AboutUsViewController.xib */; };
 		9EAA0E001A68A9FF006FF072 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF91A68A9FF006FF072 /* TempViewController.m */; };
 		9EAA0E021A68AA14006FF072 /* serch2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0E011A68AA14006FF072 /* serch2.jpg */; };
+		9EDF3BB91AD39E26009A467B /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3BB81AD39E26009A467B /* city.plist */; };
 		9EE1B89B1ABC304700F1AF0B /* ZFLineDeatialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */; };
-		9EE5F6631AB58DF7008FBFB3 /* BusRealTimeResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE5F6621AB58DF7008FBFB3 /* BusRealTimeResultViewController.m */; };
+		9EE9D3711AD0CCF300BC6F7C /* ZFSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9D36F1AD0CCF300BC6F7C /* ZFSearchResultViewController.m */; };
+		9EE9D3721AD0CCF300BC6F7C /* ZFSearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE9D3701AD0CCF300BC6F7C /* ZFSearchResultViewController.xib */; };
+		9EE9D3901AD1175000BC6F7C /* LineDeatialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9D38E1AD1175000BC6F7C /* LineDeatialViewController.m */; };
+		9EE9D3911AD1175000BC6F7C /* LineDeatialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE9D38F1AD1175000BC6F7C /* LineDeatialViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +104,7 @@
 		9E7231901A6796D1004ED4D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E7231921A6796D1004ED4D3 /* 掌公交-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "掌公交-Prefix.pch"; sourceTree = "<group>"; };
 		9E7231931A6796D1004ED4D3 /* ZFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZFAppDelegate.h; sourceTree = "<group>"; };
-		9E7231941A6796D1004ED4D3 /* ZFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZFAppDelegate.m; sourceTree = "<group>"; };
+		9E7231941A6796D1004ED4D3 /* ZFAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ZFAppDelegate.mm; sourceTree = "<group>"; };
 		9E7231961A6796D1004ED4D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9E72319C1A6796D1004ED4D3 /* 掌公交Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "掌公交Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E72319D1A6796D1004ED4D3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -118,6 +126,13 @@
 		9E7231E11A68A085004ED4D3 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9E7231E31A68A095004ED4D3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		9E7231E51A68A0AA004ED4D3 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		9E85DB091AD2160400861D88 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9E85DB631AD23DCB00861D88 /* AnnotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnotationViewController.h; sourceTree = "<group>"; };
+		9E85DB641AD23DCB00861D88 /* AnnotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnotationViewController.m; sourceTree = "<group>"; };
+		9E85DB661AD251D700861D88 /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		9E85DB681AD2565700861D88 /* ChangCityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangCityViewController.h; sourceTree = "<group>"; };
+		9E85DB691AD2565700861D88 /* ChangCityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangCityViewController.m; sourceTree = "<group>"; };
+		9E85DB6A1AD2565700861D88 /* ChangCityViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangCityViewController.xib; sourceTree = "<group>"; };
 		9EAA0D351A68A664006FF072 /* BMapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMapKit.h; sourceTree = "<group>"; };
 		9EAA0D361A68A664006FF072 /* BMKActionPaopaoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKActionPaopaoView.h; sourceTree = "<group>"; };
 		9EAA0D371A68A664006FF072 /* BMKAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKAnnotation.h; sourceTree = "<group>"; };
@@ -187,8 +202,6 @@
 		9EAA0DBC1A68A99D006FF072 /* BusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BusViewController.xib; sourceTree = "<group>"; };
 		9EAA0DBD1A68A99D006FF072 /* BusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusViewController.h; sourceTree = "<group>"; };
 		9EAA0DBE1A68A99D006FF072 /* BusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusViewController.m; sourceTree = "<group>"; };
-		9EAA0DBF1A68A99D006FF072 /* SearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
-		9EAA0DC01A68A99D006FF072 /* SearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		9EAA0DC11A68A99D006FF072 /* GoHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoHomeViewController.h; sourceTree = "<group>"; };
 		9EAA0DC21A68A99D006FF072 /* GoHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoHomeViewController.m; sourceTree = "<group>"; };
 		9EAA0DC31A68A99D006FF072 /* WhereIsBusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhereIsBusViewController.h; sourceTree = "<group>"; };
@@ -230,10 +243,15 @@
 		9EAA0DF81A68A9FF006FF072 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
 		9EAA0DF91A68A9FF006FF072 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		9EAA0E011A68AA14006FF072 /* serch2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serch2.jpg; sourceTree = "<group>"; };
+		9EDF3BB81AD39E26009A467B /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
 		9EE1B8991ABC304700F1AF0B /* ZFLineDeatialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLineDeatialViewController.h; sourceTree = "<group>"; };
 		9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLineDeatialViewController.m; sourceTree = "<group>"; };
-		9EE5F6611AB58DF7008FBFB3 /* BusRealTimeResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BusRealTimeResultViewController.h; sourceTree = "<group>"; };
-		9EE5F6621AB58DF7008FBFB3 /* BusRealTimeResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BusRealTimeResultViewController.m; sourceTree = "<group>"; };
+		9EE9D36E1AD0CCF300BC6F7C /* ZFSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSearchResultViewController.h; sourceTree = "<group>"; };
+		9EE9D36F1AD0CCF300BC6F7C /* ZFSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFSearchResultViewController.m; sourceTree = "<group>"; };
+		9EE9D3701AD0CCF300BC6F7C /* ZFSearchResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFSearchResultViewController.xib; sourceTree = "<group>"; };
+		9EE9D38D1AD1175000BC6F7C /* LineDeatialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineDeatialViewController.h; sourceTree = "<group>"; };
+		9EE9D38E1AD1175000BC6F7C /* LineDeatialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineDeatialViewController.m; sourceTree = "<group>"; };
+		9EE9D38F1AD1175000BC6F7C /* LineDeatialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineDeatialViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +259,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E85DB0A1AD2160400861D88 /* MapKit.framework in Frameworks */,
 				9E7231E61A68A0AA004ED4D3 /* Security.framework in Frameworks */,
 				9E7231E41A68A095004ED4D3 /* SystemConfiguration.framework in Frameworks */,
 				9E7231E21A68A085004ED4D3 /* OpenGLES.framework in Frameworks */,
@@ -300,6 +319,7 @@
 		9E7231831A6796D1004ED4D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E85DB091AD2160400861D88 /* MapKit.framework */,
 				9E7231E51A68A0AA004ED4D3 /* Security.framework */,
 				9E7231E31A68A095004ED4D3 /* SystemConfiguration.framework */,
 				9E7231E11A68A085004ED4D3 /* OpenGLES.framework */,
@@ -318,7 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				9E7231931A6796D1004ED4D3 /* ZFAppDelegate.h */,
-				9E7231941A6796D1004ED4D3 /* ZFAppDelegate.m */,
+				9E7231941A6796D1004ED4D3 /* ZFAppDelegate.mm */,
 				9E7231BE1A67AA02004ED4D3 /* Bus */,
 				9E7231BF1A67AA18004ED4D3 /* Search */,
 				9E7231C21A67AA59004ED4D3 /* Map */,
@@ -337,6 +357,7 @@
 				9E72318D1A6796D1004ED4D3 /* InfoPlist.strings */,
 				9E7231901A6796D1004ED4D3 /* main.m */,
 				9E7231921A6796D1004ED4D3 /* 掌公交-Prefix.pch */,
+				9EDF3BB81AD39E26009A467B /* city.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -362,6 +383,7 @@
 		9E7231B31A67A415004ED4D3 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				9E85DB661AD251D700861D88 /* heart.png */,
 				9E4F66B81ACF866C00F15588 /* bus.png */,
 				9E4F66B61ACF84C600F15588 /* bus.jpg */,
 				9E4F66B41ACF781F00F15588 /* busDirection.png */,
@@ -387,14 +409,15 @@
 				9EAA0DBC1A68A99D006FF072 /* BusViewController.xib */,
 				9EAA0DBD1A68A99D006FF072 /* BusViewController.h */,
 				9EAA0DBE1A68A99D006FF072 /* BusViewController.m */,
-				9EAA0DBF1A68A99D006FF072 /* SearchResultViewController.h */,
-				9EAA0DC01A68A99D006FF072 /* SearchResultViewController.m */,
+				9EE9D36E1AD0CCF300BC6F7C /* ZFSearchResultViewController.h */,
+				9EE9D36F1AD0CCF300BC6F7C /* ZFSearchResultViewController.m */,
+				9EE9D3701AD0CCF300BC6F7C /* ZFSearchResultViewController.xib */,
 				9EAA0DC11A68A99D006FF072 /* GoHomeViewController.h */,
 				9EAA0DC21A68A99D006FF072 /* GoHomeViewController.m */,
 				9EAA0DC31A68A99D006FF072 /* WhereIsBusViewController.h */,
 				9EAA0DC41A68A99D006FF072 /* WhereIsBusViewController.m */,
-				9EE5F6611AB58DF7008FBFB3 /* BusRealTimeResultViewController.h */,
-				9EE5F6621AB58DF7008FBFB3 /* BusRealTimeResultViewController.m */,
+				9E85DB631AD23DCB00861D88 /* AnnotationViewController.h */,
+				9E85DB641AD23DCB00861D88 /* AnnotationViewController.m */,
 				9EAA0DC51A68A99D006FF072 /* WhereAmIViewController.h */,
 				9EAA0DC61A68A99D006FF072 /* WhereAmIViewController.m */,
 			);
@@ -410,6 +433,9 @@
 				9EAA0DD01A68A9C3006FF072 /* ZhanDianSearchResultViewController.m */,
 				9EAA0DD11A68A9C3006FF072 /* ZhanDianresultViewController.h */,
 				9EAA0DD21A68A9C3006FF072 /* ZhanDianresultViewController.m */,
+				9EE9D38D1AD1175000BC6F7C /* LineDeatialViewController.h */,
+				9EE9D38E1AD1175000BC6F7C /* LineDeatialViewController.m */,
+				9EE9D38F1AD1175000BC6F7C /* LineDeatialViewController.xib */,
 				9EE1B8991ABC304700F1AF0B /* ZFLineDeatialViewController.h */,
 				9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */,
 			);
@@ -444,6 +470,9 @@
 			children = (
 				9EAA0DEE1A68A9FF006FF072 /* MoreViewController.h */,
 				9EAA0DEF1A68A9FF006FF072 /* MoreViewController.m */,
+				9E85DB681AD2565700861D88 /* ChangCityViewController.h */,
+				9E85DB691AD2565700861D88 /* ChangCityViewController.m */,
+				9E85DB6A1AD2565700861D88 /* ChangCityViewController.xib */,
 				9EAA0DF01A68A9FF006FF072 /* IdeaBackViewController.h */,
 				9EAA0DF11A68A9FF006FF072 /* IdeaBackViewController.m */,
 				9EAA0DF21A68A9FF006FF072 /* VersionUpgradeViewController.h */,
@@ -625,11 +654,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E4F66B71ACF84C600F15588 /* bus.jpg in Resources */,
+				9E85DB671AD251D700861D88 /* heart.png in Resources */,
 				9EAA0E021A68AA14006FF072 /* serch2.jpg in Resources */,
 				9EAA0DFF1A68A9FF006FF072 /* AboutUsViewController.xib in Resources */,
 				9E7231DB1A689D78004ED4D3 /* 4.png in Resources */,
 				9E7231B91A67A437004ED4D3 /* appicon1.png in Resources */,
 				9EAA0DFD1A68A9FF006FF072 /* VersionUpgradeViewController.xib in Resources */,
+				9EE9D3721AD0CCF300BC6F7C /* ZFSearchResultViewController.xib in Resources */,
 				9E7231D81A689D78004ED4D3 /* 1.png in Resources */,
 				9E72318F1A6796D1004ED4D3 /* InfoPlist.strings in Resources */,
 				9E7231BC1A67A437004ED4D3 /* LaunchImage1.png in Resources */,
@@ -640,8 +671,11 @@
 				9E7231D91A689D78004ED4D3 /* 2.png in Resources */,
 				9E7231DC1A689D78004ED4D3 /* 5.png in Resources */,
 				9E4F66B51ACF781F00F15588 /* busDirection.png in Resources */,
+				9E85DB6C1AD2565700861D88 /* ChangCityViewController.xib in Resources */,
 				9EAA0DC71A68A99D006FF072 /* BusViewController.xib in Resources */,
 				9E7231BB1A67A437004ED4D3 /* appicon3.png in Resources */,
+				9EDF3BB91AD39E26009A467B /* city.plist in Resources */,
+				9EE9D3911AD1175000BC6F7C /* LineDeatialViewController.xib in Resources */,
 				9E7231BD1A67A437004ED4D3 /* LaunchImage2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -695,21 +729,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE1B89B1ABC304700F1AF0B /* ZFLineDeatialViewController.m in Sources */,
-				9E7231951A6796D1004ED4D3 /* ZFAppDelegate.m in Sources */,
+				9E7231951A6796D1004ED4D3 /* ZFAppDelegate.mm in Sources */,
 				9EAA0DD31A68A9C3006FF072 /* SearchViewController.m in Sources */,
 				9EAA0DD51A68A9C3006FF072 /* ZhanDianresultViewController.m in Sources */,
 				9EAA0DCB1A68A99D006FF072 /* WhereIsBusViewController.m in Sources */,
+				9EE9D3711AD0CCF300BC6F7C /* ZFSearchResultViewController.m in Sources */,
 				9EAA0DFC1A68A9FF006FF072 /* VersionUpgradeViewController.m in Sources */,
 				9EAA0DC81A68A99D006FF072 /* BusViewController.m in Sources */,
+				9E85DB651AD23DCB00861D88 /* AnnotationViewController.m in Sources */,
 				9EAA0DED1A68A9DB006FF072 /* MapViewController.m in Sources */,
+				9EE9D3901AD1175000BC6F7C /* LineDeatialViewController.m in Sources */,
 				9EAA0DEC1A68A9DB006FF072 /* BaseMapViewController.m in Sources */,
 				9E7231911A6796D1004ED4D3 /* main.m in Sources */,
 				9EAA0DE71A68A9DB006FF072 /* LineDashPolyline.m in Sources */,
 				9EAA0DD41A68A9C3006FF072 /* ZhanDianSearchResultViewController.m in Sources */,
-				9EE5F6631AB58DF7008FBFB3 /* BusRealTimeResultViewController.m in Sources */,
 				9EAA0DEB1A68A9DB006FF072 /* BusLineDetailViewController.m in Sources */,
 				9EAA0DE81A68A9DB006FF072 /* BusStopAnnotation.m in Sources */,
-				9EAA0DC91A68A99D006FF072 /* SearchResultViewController.m in Sources */,
+				9E85DB6B1AD2565700861D88 /* ChangCityViewController.m in Sources */,
 				9EAA0DE61A68A9DB006FF072 /* BusLineViewController.m in Sources */,
 				9EAA0DE91A68A9DB006FF072 /* CommonUtility.m in Sources */,
 				9EAA0E001A68A9FF006FF072 /* TempViewController.m in Sources */,
@@ -838,6 +874,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "掌公交/掌公交-Prefix.pch";
 				INFOPLIST_FILE = "掌公交/掌公交-Info.plist";
@@ -858,6 +895,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "掌公交/掌公交-Prefix.pch";
 				INFOPLIST_FILE = "掌公交/掌公交-Info.plist";

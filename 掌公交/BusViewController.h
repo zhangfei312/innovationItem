@@ -11,9 +11,9 @@
 
 @interface BusViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITextField *startTextField;
-@property (weak, nonatomic) IBOutlet UITextField *endTextField;
-@property (weak, nonatomic) IBOutlet UILabel *historyTextField;
+@property (strong, nonatomic) IBOutlet UITextField *startTextField;
+@property (strong, nonatomic) IBOutlet UITextField *endTextField;
+@property (strong, nonatomic) IBOutlet UILabel *historyTextField;
 
 - (IBAction)changeSearch:(UIButton *)sender;
 - (IBAction)search:(UIButton *)sender;

@@ -7,7 +7,7 @@
 //
 
 #import "BusViewController.h"
-#import "SearchResultViewController.h"
+#import "ZFSearchResultViewController.h"
 #import "GoHomeViewController.h"
 #import "WhereIsBusViewController.h"
 #import "WhereAmIViewController.h"
@@ -64,7 +64,8 @@
     [whereAmI setTitle:@"我在哪" forState:UIControlStateNormal];
     [whereAmI addTarget:self action:@selector(whereAmI:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:whereIsBus];
-    NSLog(@"gthyhg");
+    
+    NSLog(@"初始化掌公交页面成功！");
     
 }
 - (void)sendBtnValue:(NSString *)value returnTag:(int)tag{
@@ -77,7 +78,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)changeSearch:(UIButton *)sender {
@@ -85,30 +85,27 @@
     temp = self.startTextField.text;
     self.startTextField.text = self.endTextField.text;
     self.endTextField.text = temp;
-    
 }
 #pragma mark 这里有问题没有解决
 - (IBAction)search:(UIButton *)sender {
-    SearchResultViewController *result = [[SearchResultViewController alloc]init];
-    result.startValue = self.startTextField.text;
-    result.endValue = self.endTextField.text;
+    ZFSearchResultViewController *result = [[ZFSearchResultViewController alloc]init];
+    //[self.navigationController pushViewController:result animated:YES];
+    
     NSString *a = self.startTextField.text;
     NSString *b = self.endTextField.text;
-    NSLog(@"%@,%@",a,b);
-//    NSString *c = @"";
-//    NSString *d = @"";
-    if ([a isEqual: @""] && [b isEqual: @""] ){
-        
-        NSLog(@"你没有输入任何信息");
-        UIAlertView *alterView = [[UIAlertView alloc]initWithTitle:@"请输入起点和终点！" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+    NSLog(@"起点：%@;终点：%@",a,b);
+    if ([a isEqual: @""] || [b isEqual: @""] ){
+        NSLog(@"你输入的信息有误");
+        UIAlertView *alterView = [[UIAlertView alloc]initWithTitle:@"请确认输入了起点和终点！" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
         [alterView show];
     }else{
+        NSLog(@"起点和终点输入正确，进入查询结果页面SearchResultViewController！");
+        result.startValue = self.startTextField.text;
+        result.endValue = self.endTextField.text;
         result.hidesBottomBarWhenPushed = YES;//隐藏tabBar
         [self.navigationController pushViewController:result animated:YES];
-        
-        
     }
-    NSLog(@"----------------------------------------");
+    
 }
 
 - (IBAction)goHome:(UIButton *)sender {

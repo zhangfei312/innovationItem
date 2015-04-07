@@ -9,7 +9,7 @@
 #import "WhereIsBusViewController.h"
 #import "ZFAnation.h"
 #import "WXAnation.h"
-#import "BusRealTimeResultViewController.h"
+#import "AnnotationViewController.h"
 #define keyValueString @"24de84ea5b588fcdfc82b996c04f13c3"
 
 @interface WhereIsBusViewController ()<MKMapViewDelegate,CLLocationManagerDelegate,UITextFieldDelegate>{
@@ -124,7 +124,6 @@
 -(void)setButton{
     int width = 100;
     int height = 30;
-    
     UIButton *btn1 = [[UIButton alloc]initWithFrame:CGRectMake(5, 135, width, height)];
     UIButton *btn2 = [[UIButton alloc]initWithFrame:CGRectMake(10+width, 135, width, height)];
     UIButton *btn3 = [[UIButton alloc]initWithFrame:CGRectMake(15+width*2, 135, width, height)];
@@ -176,36 +175,36 @@
     long tag = sender.tag;
     switch (tag) {
         case 1:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];
         }
             break;
         case 2:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];        }
             break;
         case 3:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];
         }
             break;
         case 4:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];
         }
             break;
         case 5:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];
         }
             break;
         case 6:{
-            BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+            AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
             realTimeView.btnString = sender.titleLabel.text;
             [self.navigationController pushViewController:realTimeView animated:YES];
         }
@@ -218,7 +217,7 @@
 
 //搜索框编辑调用
 - (void)searchResult:(NSString *)editContent{
-    BusRealTimeResultViewController *realTimeView = [[BusRealTimeResultViewController alloc]init];
+    AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
     [self.navigationController popToViewController:realTimeView animated:YES];
 }
 

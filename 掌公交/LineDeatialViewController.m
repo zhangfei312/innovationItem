@@ -1,18 +1,18 @@
 //
-//  BusRealTimeResultViewController.m
+//  LineDeatialViewController.m
 //  掌公交
 //
-//  Created by froda on 15/3/15.
+//  Created by froda on 15/4/5.
 //  Copyright (c) 2015年 froda. All rights reserved.
 //
 
-#import "BusRealTimeResultViewController.h"
+#import "LineDeatialViewController.h"
 
-@interface BusRealTimeResultViewController ()
+@interface LineDeatialViewController ()
 
 @end
 
-@implementation BusRealTimeResultViewController
+@implementation LineDeatialViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,16 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self intitView];
-    // Do any additional setup after loading the view.
-}
-
-- (void)intitView{
-
-    UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(40, 200, 200, 40)];
-    lable.text = _btnString;
-    [self.view addSubview:lable];
-    
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning

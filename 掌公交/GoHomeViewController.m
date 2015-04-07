@@ -45,10 +45,10 @@
     lable2.textColor = [UIColor redColor];
     [self.view addSubview:lable2];
     
-    UIButton *imageButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
-    [imageButton setImage:[UIImage imageNamed:@"bus.png"] forState:UIControlStateNormal];
-    imageButton.alpha = 0.3;
-    [self.view addSubview:imageButton];
+    UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    imgView.image = [UIImage imageNamed:@"bus.png"];
+    imgView.alpha = 0.3;
+    [self.view addSubview:imgView];
 }
 
 - (void)didReceiveMemoryWarning

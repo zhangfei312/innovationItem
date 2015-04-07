@@ -10,7 +10,7 @@
 
 @interface ZFLineDeatialViewController ()<UITableViewDataSource,UITableViewDelegate>{
     NSString *line;
-    NSMutableArray *lineInformation;
+    NSArray *lineInformation;
 }
 
 @end
@@ -19,21 +19,22 @@
 @synthesize receive = _receive;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getLineInformation];
     
-    
-    NSLog(@"print _receive :%@",_receive);
+    NSLog(@"_receive :%@",_receive);
     
     [self creatResultTable];
     
     [self creatResultFrame];
     
-    [self getLineInformation];
+    NSLog(@"lineInformation:%@,lineInformation'count:%i",lineInformation,[lineInformation count]);
     
     
 }
 //生成一个说明框框
 - (void)creatResultFrame{
-    UILabel *dataLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 70, self.view.frame.size.width, 20)];
+    UILabel *dataLable = [[UILabel alloc]initWithFrame:CGRectMake(0, 60, self.view.frame.size.width, 50)];
+    dataLable.backgroundColor = [UIColor whiteColor];
     dataLable.textAlignment = NSTextAlignmentCenter;
     dataLable.text = [NSString stringWithFormat:@"%@线路详情",[self getOnlyNum:_receive][0]];
     dataLable.textAlignment = NSTextAlignmentCenter;
@@ -69,42 +70,48 @@
 }
 
 //获取数据
--(NSArray *)getLineInformation{
+-(void)getLineInformation{
     NSError *error;
     //首先加载一个NSURL对象
     
     NSArray *lin = [self getOnlyNum:_receive];
-    NSLog(@"%@",lin);
-    int busLine = [lin[0] intValue];
-    
-    NSLog(@"busline:%i",busLine);
-    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetLineInfo?city%@=&line=%i&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],busLine];
+    NSLog(@"lin:%@",lin);
+    //int busLine = [lin[0] intValue];
+    NSString *busLine =lin[0];
+    NSLog(@"busline:%@",busLine);
+    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetLineInfo?city=%@&line=%@&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],busLine];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     //弄一个NSData对象，用来装返回的数据
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     //弄一个字典，用NSJSONSerialization把data数据解析出来。
     NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
     NSArray *busline = [dic valueForKey:@"data"];
-    lineInformation = [[NSMutableArray alloc]init];
+    
     for (int i = 0; i < busline.count; i++) {
-        NSString *s = [busline[i] valueForKey:@"name"];
-        int t = (int)[self getOnlyNum:s][0];
         
-        if (t == busLine) {
-            [lineInformation addObject:s];
+        NSString *busName = [busline[i] valueForKey:@"name"];
+        NSLog(@"busName:%@",busName);
+        NSLog(@"receive:%@",_receive);
+        if ([busName isEqualToString:_receive]) {
+            NSLog(@"i:----------------%i",i);
+            NSArray *busLineInform = [busline valueForKey:@"stats"];
+            lineInformation = [busLineInform[0] componentsSeparatedByString:@";"];
+            NSLog(@"busLineinform:%@",busLineInform);
+            
         }
         NSLog(@"解析的数据：%@",lineInformation);
     }
-    return lineInformation;
 }
 
 - (void)creatResultTable{
-    UITableView *resultView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 800) style:UITableViewStylePlain];
+    UITableView *resultView = [[UITableView alloc]initWithFrame:CGRectMake(0, 60, 320, 480) style:UITableViewStylePlain];
+    resultView.contentInset = UIEdgeInsetsMake(0, 0, 100, 0);
+    resultView.separatorStyle = UITableViewCellSeparatorStyleNone;
     resultView.delegate = self;
     resultView.dataSource = self;
     
-    [resultView setScrollEnabled:NO];
-    [self setExtraCellLineHidden:resultView];
+    [resultView setScrollEnabled:YES];
+    //[self setExtraCellLineHidden:resultView];
     
     [self.view addSubview:resultView];
 //去掉tabview中多余的横线
@@ -116,24 +123,36 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 10;
+    //return [lineInformation count];
+    return [lineInformation count]*2-1;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView;{
     return 1;
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    
     UITableViewCell *myCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
-    
-    if (indexPath.row % 2 == 0) {
-        myCell.textLabel.text  =@"nihao";
-        myCell.textLabel.textAlignment = NSTextAlignmentCenter;
-    }else{
-        [myCell addSubview:[self creatAView:myCell.bounds.size.width/2 andY:myCell.bounds.origin.y+20]];
+    if (indexPath.row == 0) {
+        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(110, myCell.bounds.origin.y/2, 100, 44)];
+        lable.backgroundColor = [UIColor clearColor];
+        [myCell addSubview:lable];
+        lable.textAlignment = NSTextAlignmentCenter;
+        lable.text = lineInformation[indexPath.row];
     }
-    myCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    myCell.backgroundColor = [UIColor clearColor];
+    if (indexPath.row % 2 == 0) {
+        UILabel *lable = [[UILabel alloc]initWithFrame:CGRectMake(110, myCell.bounds.origin.y/2, 100, 44)];
+        lable.backgroundColor = [UIColor clearColor];
+        [myCell addSubview:lable];
+        lable.textAlignment = NSTextAlignmentCenter;
+        lable.text = lineInformation[indexPath.row/2];
+    }else{
+        if (indexPath.row != ([lineInformation count])) {
+            [myCell addSubview:[self creatAView:myCell.bounds.size.width/2 andY:myCell.bounds.origin.y+20]];
+        }
+        
+    }
+    //myCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return myCell;
     
 }

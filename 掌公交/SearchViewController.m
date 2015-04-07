@@ -66,6 +66,14 @@
 - (void)exitKeyBoard{
     [placeSearch resignFirstResponder];
 }
+
+//去掉tabview中多余的横线,在调用的时候要把setScrollEnabled:设置为YES
+- (void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view =[ [UIView alloc]init];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
 #pragma mark 自定义navigationBar
 - (void)initNavigationBar{
     [self.navigationController setNavigationBarHidden:YES];
@@ -106,12 +114,12 @@
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField{
-    NSLog(@"-------------wancheng");
+    NSLog(@"-------------完成");
     self.navigationController.navigationBarHidden = NO;
     
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
-    NSLog(@"------------kaishi");
+    NSLog(@"------------开始");
     [self initNavigationBar];
     
 }
@@ -123,7 +131,7 @@
     historyView.delegate = self;
     historyView.alpha = 0.5;
     historyView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-    
+    [self setExtraCellLineHidden:historyView];
     [self.view addSubview:historyView];
 }
 - (void)exitButton:(UIButton *)sender{
