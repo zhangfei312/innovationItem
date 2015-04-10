@@ -7,11 +7,13 @@
 //
 
 #import "MoreViewController.h"
-#import "TempViewController.h"
 #import "IdeaBackViewController.h"
 #import "VersionUpgradeViewController.h"
 #import "AboutUsViewController.h"
 #import "ChangCityViewController.h"
+#import "ZFGoHomeSetViewController.h"
+#import "ZFOffLineDataViewController.h"
+#import "AgreementViewController.h"
 @interface MoreViewController (){
     NSArray *_Source;//cell上显示的数据
     int a;
@@ -93,7 +95,6 @@
 }
 #pragma mark 选中某一行的时候
 //会在你选中了某一行之后触发的方法
-// Called after the user changes the selection.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     //NSLog(@"index:%ld,row:%ld",(long)indexPath.section,(long)indexPath.row);
@@ -108,14 +109,21 @@
                     [self.navigationController pushViewController:temp animated:YES];
                 }
                     break;
-                case 1:{
+                case 1:
+                {
+                    ZFGoHomeSetViewController *goHomeSet = [[ZFGoHomeSetViewController alloc]init];
+                    goHomeSet.hidesBottomBarWhenPushed = YES;
+                    [self.navigationController pushViewController:goHomeSet animated:YES];
+                }
+                    break;
+                case 2:{
                     NSLog(@"section:%ld;row:%ld",(long)indexPath.section,(long)indexPath.row);
-                    TempViewController *temp = [[TempViewController alloc]init];
+                    ZFOffLineDataViewController *temp = [[ZFOffLineDataViewController alloc]init];
                     temp.hidesBottomBarWhenPushed  =YES;
                     [self.navigationController pushViewController:temp animated:YES];
                 }
                     break;
-                case 2:
+                case 3:
                 {
                     NSLog(@"section:%ld;row:%ld",(long)indexPath.section,(long)indexPath.row);
                     UIAlertView *alter = [[UIAlertView alloc]initWithTitle:@"您确定要清除缓存吗？" message:nil delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
@@ -164,9 +172,9 @@
                     break;
                 case 2:{
                     NSLog(@"section:%ld;row:%ld",(long)indexPath.section,(long)indexPath.row);
-                    TempViewController *temp = [[TempViewController alloc]init];
-                    temp.hidesBottomBarWhenPushed  =YES;
-                    [self.navigationController pushViewController:temp animated:YES];
+                    AgreementViewController *agreement = [[AgreementViewController alloc]init];
+                    agreement.hidesBottomBarWhenPushed  =YES;
+                    [self.navigationController pushViewController:agreement animated:YES];
                 }
                     break;
                 default:
@@ -176,12 +184,6 @@
         default:
             break;
     }
-    
-    
-    
-    
-    
-    
 }
 #pragma mark UIAlterViewDeleagate
 //点击某个按钮触发的方法

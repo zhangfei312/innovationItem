@@ -236,10 +236,13 @@
 //点击空白背景时会退出键盘
 -(void)exitBtnMethod:(id)sender{
     [searchFiled resignFirstResponder];
+    
 }
 //点击return时候会退出键盘
 - (void)exitKeyBoard:(id)sender {
     [sender resignFirstResponder];
+    AnnotationViewController *realTimeView = [[AnnotationViewController alloc]init];
+    [self.navigationController pushViewController:realTimeView animated:YES];
 }
 
 - (void)creatAnnotation{

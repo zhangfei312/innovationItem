@@ -96,7 +96,6 @@
             NSLog(@"i:----------------%i",i);
             NSArray *busLineInform = [busline valueForKey:@"stats"];
             lineInformation = [busLineInform[0] componentsSeparatedByString:@";"];
-            NSLog(@"busLineinform:%@",busLineInform);
             
         }
         NSLog(@"解析的数据：%@",lineInformation);
@@ -151,12 +150,15 @@
         }
         
     }
-    //myCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
+    UIView *myView = [[UIView alloc]initWithFrame:CGRectMake(0,  myCell.bounds.origin.y/2, 320, 44)];
+    myView.backgroundColor = [UIColor whiteColor];
+    myCell.selectedBackgroundView = myView;
+
     return myCell;
     
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
 }
 
 - (void)didReceiveMemoryWarning {

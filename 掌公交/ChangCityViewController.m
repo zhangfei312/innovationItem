@@ -118,20 +118,25 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (tableView.tag == 2) {
-        NSLog(@"section:%i,row:%i",indexPath.section,indexPath.row);
-        NSLog(@"select:%@",[tableView cellForRowAtIndexPath:indexPath].textLabel.text);
         NSString *str = provinceData[indexPath.row];
-        NSLog(@"%@",str);
         [self initCityData:str];
         _cityTableView = [[UITableView alloc]initWithFrame:CGRectMake(100, 60, 220, 420)];
-        if ([cityData2 count] <= 9) {
-            _cityTableView.scrollEnabled = NO;
-            [self setExtraCellLineHidden:_cityTableView];
-        }
         _cityTableView.delegate = self;
         _cityTableView.dataSource =self;
         _cityTableView.tag = 1;
         [self.view addSubview:_cityTableView];
+        if ([cityData2 count] <= 9) {
+            _cityTableView.scrollEnabled = NO;
+            [self setExtraCellLineHidden:_cityTableView];
+        }
+        
+    }
+    else{
+        NSString *cityStr = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
+        NSUserDefaults *gohomeSetting = [NSUserDefaults standardUserDefaults];
+        [gohomeSetting setObject:cityStr forKey:@"city"];
+        [self.navigationController popToRootViewControllerAnimated:YES];
     }
 }
+
 @end

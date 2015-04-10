@@ -34,7 +34,6 @@
 //    [self.view addSubview:imageView];
 //    [self.view sendSubviewToBack:imageView];
     // Do any additional setup after loading the view from its nib.
-    [self initSomeButton];
 }
 #pragma mark 初始化查询以及下面的几个按钮
 - (void)initSomeButton{
@@ -86,7 +85,7 @@
     self.startTextField.text = self.endTextField.text;
     self.endTextField.text = temp;
 }
-#pragma mark 这里有问题没有解决
+#pragma mark 搜索
 - (IBAction)search:(UIButton *)sender {
     ZFSearchResultViewController *result = [[ZFSearchResultViewController alloc]init];
     //[self.navigationController pushViewController:result animated:YES];

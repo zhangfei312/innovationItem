@@ -9,6 +9,7 @@
 #import "ZFSearchResultViewController.h"
 #import "BusViewController.h"
 #import "ZFLineDeatialViewController.h"
+#import "ZFRealTimeViewController.h"
 @interface ZFSearchResultViewController (){
     NSString *busString;
     UILabel *lable1;
@@ -62,7 +63,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     int x = indexPath.row;
     NSLog(@"你点击了%i",x);
-    ZFLineDeatialViewController *ld = [[ZFLineDeatialViewController alloc]init];
+    ZFRealTimeViewController *ld = [[ZFRealTimeViewController alloc]init];
     ld.receive = [tableView cellForRowAtIndexPath:indexPath].textLabel.text;
     NSLog(@"传入的线路是：%@",[tableView cellForRowAtIndexPath:indexPath].textLabel.text);
     [self.navigationController pushViewController:ld animated:YES];
@@ -102,9 +103,24 @@
 
 //此方法用于请求查询公交信息
 - (void)requestBusInformation{
+    /*
+     加载用于请求是出现的菊花
+     */
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 100, 100, 100)];
+    view.backgroundColor = [UIColor whiteColor];
+    UIActivityIndicatorView *native = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    native.frame = CGRectMake(self.view.bounds.origin.x+20, self.view.bounds.origin.y+20, 20, 20);
+    native.hidesWhenStopped = YES;
+    [native startAnimating];
+    [view addSubview:native];
+    [self.view addSubview:view];
+    
     NSError *error;
     //首先加载一个NSURL对象
-    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetTransferInfo?city=%@&start=%@&end=%@&format=json",[@"长春" stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_startValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_endValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+    NSUserDefaults *gohomeSetting = [NSUserDefaults standardUserDefaults];
+    NSString *city = [gohomeSetting objectForKey:@"city"];
+    NSLog(@"设置的城市是：%@",city);
+    NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetTransferInfo?city=%@&start=%@&end=%@&format=json",[city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_startValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_endValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     //弄一个NSData对象，用来装返回的数据
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
@@ -114,6 +130,11 @@
     NSDictionary *result_buses = [resultData valueForKey:@"buses"];
     NSArray *bus_array = [result_buses valueForKey:@"bus"];//返回的公交车的信息
     // NSlog(@"tiaoshu:%i",[bus_array count]);
+    if ([dic isEqual:NULL]) {
+        NSLog(@"请求回来的数据不是空！");
+        [native stopAnimating];
+        [view removeFromSuperview];
+    }
     for (int i = 0; i < [bus_array count]; i++) {
         
         NSDictionary *bus_array1 = bus_array[i];

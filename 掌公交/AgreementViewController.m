@@ -1,18 +1,18 @@
 //
-//  TempViewController.m
+//  AgreementViewController.m
 //  掌公交
 //
-//  Created by 张飞 on 14-8-19.
-//  Copyright (c) 2014年 张飞. All rights reserved.
+//  Created by froda on 15/4/8.
+//  Copyright (c) 2015年 froda. All rights reserved.
 //
 
-#import "TempViewController.h"
+#import "AgreementViewController.h"
 
-@interface TempViewController ()
+@interface AgreementViewController ()
 
 @end
 
-@implementation TempViewController
+@implementation AgreementViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,14 +26,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor  =[UIColor whiteColor];
-	// Do any additional setup after loading the view.
+    _agreement.editable = NO;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

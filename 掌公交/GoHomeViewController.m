@@ -49,6 +49,14 @@
     imgView.image = [UIImage imageNamed:@"bus.png"];
     imgView.alpha = 0.3;
     [self.view addSubview:imgView];
+    
+    UILabel *gohome = [[UILabel alloc]initWithFrame:CGRectMake(0, 150, self.view.bounds.size.width, 100)];
+    NSUserDefaults *gohomeSetting = [NSUserDefaults standardUserDefaults];
+    NSString *satrtStation = [gohomeSetting objectForKey:@"startStation"];
+    NSString *busEndStation = [gohomeSetting objectForKey:@"endStation"];
+    NSString *str=[NSString stringWithFormat:@"您的回家路线是:%@---->%@",satrtStation,busEndStation];
+    gohome.text = str;
+    [self.view addSubview:gohome];
 }
 
 - (void)didReceiveMemoryWarning

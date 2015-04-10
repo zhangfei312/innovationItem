@@ -68,9 +68,17 @@
 		9EAA0DFD1A68A9FF006FF072 /* VersionUpgradeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF41A68A9FF006FF072 /* VersionUpgradeViewController.xib */; };
 		9EAA0DFE1A68A9FF006FF072 /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF61A68A9FF006FF072 /* AboutUsViewController.m */; };
 		9EAA0DFF1A68A9FF006FF072 /* AboutUsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF71A68A9FF006FF072 /* AboutUsViewController.xib */; };
-		9EAA0E001A68A9FF006FF072 /* TempViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EAA0DF91A68A9FF006FF072 /* TempViewController.m */; };
 		9EAA0E021A68AA14006FF072 /* serch2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9EAA0E011A68AA14006FF072 /* serch2.jpg */; };
 		9EDF3BB91AD39E26009A467B /* city.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3BB81AD39E26009A467B /* city.plist */; };
+		9EDF3C081AD40E9D009A467B /* ZFGoHomeSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF3C061AD40E9D009A467B /* ZFGoHomeSetViewController.m */; };
+		9EDF3C091AD40E9D009A467B /* ZFGoHomeSetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3C071AD40E9D009A467B /* ZFGoHomeSetViewController.xib */; };
+		9EDF3C121AD4ECA6009A467B /* ZFOffLineDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF3C101AD4ECA6009A467B /* ZFOffLineDataViewController.m */; };
+		9EDF3C131AD4ECA6009A467B /* ZFOffLineDataViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3C111AD4ECA6009A467B /* ZFOffLineDataViewController.xib */; };
+		9EDF3C191AD532FB009A467B /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF3C171AD532FB009A467B /* AgreementViewController.m */; };
+		9EDF3C1A1AD532FB009A467B /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3C181AD532FB009A467B /* AgreementViewController.xib */; };
+		9EDF3C731AD5EF8F009A467B /* ZFRealTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EDF3C711AD5EF8F009A467B /* ZFRealTimeViewController.m */; };
+		9EDF3C741AD5EF8F009A467B /* ZFRealTimeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3C721AD5EF8F009A467B /* ZFRealTimeViewController.xib */; };
+		9EDF3C761AD641F7009A467B /* busLift.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EDF3C751AD641F7009A467B /* busLift.png */; };
 		9EE1B89B1ABC304700F1AF0B /* ZFLineDeatialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */; };
 		9EE9D3711AD0CCF300BC6F7C /* ZFSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE9D36F1AD0CCF300BC6F7C /* ZFSearchResultViewController.m */; };
 		9EE9D3721AD0CCF300BC6F7C /* ZFSearchResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EE9D3701AD0CCF300BC6F7C /* ZFSearchResultViewController.xib */; };
@@ -240,10 +248,21 @@
 		9EAA0DF51A68A9FF006FF072 /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		9EAA0DF61A68A9FF006FF072 /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		9EAA0DF71A68A9FF006FF072 /* AboutUsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutUsViewController.xib; sourceTree = "<group>"; };
-		9EAA0DF81A68A9FF006FF072 /* TempViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TempViewController.h; sourceTree = "<group>"; };
-		9EAA0DF91A68A9FF006FF072 /* TempViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TempViewController.m; sourceTree = "<group>"; };
 		9EAA0E011A68AA14006FF072 /* serch2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = serch2.jpg; sourceTree = "<group>"; };
 		9EDF3BB81AD39E26009A467B /* city.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = city.plist; sourceTree = "<group>"; };
+		9EDF3C051AD40E9D009A467B /* ZFGoHomeSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFGoHomeSetViewController.h; sourceTree = "<group>"; };
+		9EDF3C061AD40E9D009A467B /* ZFGoHomeSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFGoHomeSetViewController.m; sourceTree = "<group>"; };
+		9EDF3C071AD40E9D009A467B /* ZFGoHomeSetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFGoHomeSetViewController.xib; sourceTree = "<group>"; };
+		9EDF3C0F1AD4ECA6009A467B /* ZFOffLineDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFOffLineDataViewController.h; sourceTree = "<group>"; };
+		9EDF3C101AD4ECA6009A467B /* ZFOffLineDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFOffLineDataViewController.m; sourceTree = "<group>"; };
+		9EDF3C111AD4ECA6009A467B /* ZFOffLineDataViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFOffLineDataViewController.xib; sourceTree = "<group>"; };
+		9EDF3C161AD532FB009A467B /* AgreementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
+		9EDF3C171AD532FB009A467B /* AgreementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
+		9EDF3C181AD532FB009A467B /* AgreementViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
+		9EDF3C701AD5EF8F009A467B /* ZFRealTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFRealTimeViewController.h; sourceTree = "<group>"; };
+		9EDF3C711AD5EF8F009A467B /* ZFRealTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFRealTimeViewController.m; sourceTree = "<group>"; };
+		9EDF3C721AD5EF8F009A467B /* ZFRealTimeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZFRealTimeViewController.xib; sourceTree = "<group>"; };
+		9EDF3C751AD641F7009A467B /* busLift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = busLift.png; sourceTree = "<group>"; };
 		9EE1B8991ABC304700F1AF0B /* ZFLineDeatialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLineDeatialViewController.h; sourceTree = "<group>"; };
 		9EE1B89A1ABC304700F1AF0B /* ZFLineDeatialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFLineDeatialViewController.m; sourceTree = "<group>"; };
 		9EE9D36E1AD0CCF300BC6F7C /* ZFSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFSearchResultViewController.h; sourceTree = "<group>"; };
@@ -352,12 +371,12 @@
 		9E72318B1A6796D1004ED4D3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EDF3BB81AD39E26009A467B /* city.plist */,
 				9E7231B31A67A415004ED4D3 /* image */,
 				9E72318C1A6796D1004ED4D3 /* 掌公交-Info.plist */,
 				9E72318D1A6796D1004ED4D3 /* InfoPlist.strings */,
 				9E7231901A6796D1004ED4D3 /* main.m */,
 				9E7231921A6796D1004ED4D3 /* 掌公交-Prefix.pch */,
-				9EDF3BB81AD39E26009A467B /* city.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -383,6 +402,7 @@
 		9E7231B31A67A415004ED4D3 /* image */ = {
 			isa = PBXGroup;
 			children = (
+				9EDF3C751AD641F7009A467B /* busLift.png */,
 				9E85DB661AD251D700861D88 /* heart.png */,
 				9E4F66B81ACF866C00F15588 /* bus.png */,
 				9E4F66B61ACF84C600F15588 /* bus.jpg */,
@@ -412,6 +432,9 @@
 				9EE9D36E1AD0CCF300BC6F7C /* ZFSearchResultViewController.h */,
 				9EE9D36F1AD0CCF300BC6F7C /* ZFSearchResultViewController.m */,
 				9EE9D3701AD0CCF300BC6F7C /* ZFSearchResultViewController.xib */,
+				9EDF3C701AD5EF8F009A467B /* ZFRealTimeViewController.h */,
+				9EDF3C711AD5EF8F009A467B /* ZFRealTimeViewController.m */,
+				9EDF3C721AD5EF8F009A467B /* ZFRealTimeViewController.xib */,
 				9EAA0DC11A68A99D006FF072 /* GoHomeViewController.h */,
 				9EAA0DC21A68A99D006FF072 /* GoHomeViewController.m */,
 				9EAA0DC31A68A99D006FF072 /* WhereIsBusViewController.h */,
@@ -470,9 +493,15 @@
 			children = (
 				9EAA0DEE1A68A9FF006FF072 /* MoreViewController.h */,
 				9EAA0DEF1A68A9FF006FF072 /* MoreViewController.m */,
+				9EDF3C051AD40E9D009A467B /* ZFGoHomeSetViewController.h */,
+				9EDF3C061AD40E9D009A467B /* ZFGoHomeSetViewController.m */,
+				9EDF3C071AD40E9D009A467B /* ZFGoHomeSetViewController.xib */,
 				9E85DB681AD2565700861D88 /* ChangCityViewController.h */,
 				9E85DB691AD2565700861D88 /* ChangCityViewController.m */,
 				9E85DB6A1AD2565700861D88 /* ChangCityViewController.xib */,
+				9EDF3C0F1AD4ECA6009A467B /* ZFOffLineDataViewController.h */,
+				9EDF3C101AD4ECA6009A467B /* ZFOffLineDataViewController.m */,
+				9EDF3C111AD4ECA6009A467B /* ZFOffLineDataViewController.xib */,
 				9EAA0DF01A68A9FF006FF072 /* IdeaBackViewController.h */,
 				9EAA0DF11A68A9FF006FF072 /* IdeaBackViewController.m */,
 				9EAA0DF21A68A9FF006FF072 /* VersionUpgradeViewController.h */,
@@ -481,8 +510,9 @@
 				9EAA0DF51A68A9FF006FF072 /* AboutUsViewController.h */,
 				9EAA0DF61A68A9FF006FF072 /* AboutUsViewController.m */,
 				9EAA0DF71A68A9FF006FF072 /* AboutUsViewController.xib */,
-				9EAA0DF81A68A9FF006FF072 /* TempViewController.h */,
-				9EAA0DF91A68A9FF006FF072 /* TempViewController.m */,
+				9EDF3C161AD532FB009A467B /* AgreementViewController.h */,
+				9EDF3C171AD532FB009A467B /* AgreementViewController.m */,
+				9EDF3C181AD532FB009A467B /* AgreementViewController.xib */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -660,15 +690,20 @@
 				9E7231DB1A689D78004ED4D3 /* 4.png in Resources */,
 				9E7231B91A67A437004ED4D3 /* appicon1.png in Resources */,
 				9EAA0DFD1A68A9FF006FF072 /* VersionUpgradeViewController.xib in Resources */,
+				9EDF3C741AD5EF8F009A467B /* ZFRealTimeViewController.xib in Resources */,
 				9EE9D3721AD0CCF300BC6F7C /* ZFSearchResultViewController.xib in Resources */,
+				9EDF3C761AD641F7009A467B /* busLift.png in Resources */,
 				9E7231D81A689D78004ED4D3 /* 1.png in Resources */,
 				9E72318F1A6796D1004ED4D3 /* InfoPlist.strings in Resources */,
 				9E7231BC1A67A437004ED4D3 /* LaunchImage1.png in Resources */,
 				9E7231971A6796D1004ED4D3 /* Images.xcassets in Resources */,
 				9E4F66B91ACF866C00F15588 /* bus.png in Resources */,
+				9EDF3C131AD4ECA6009A467B /* ZFOffLineDataViewController.xib in Resources */,
 				9E7231DA1A689D78004ED4D3 /* 3.png in Resources */,
 				9E7231BA1A67A437004ED4D3 /* appicon2.png in Resources */,
 				9E7231D91A689D78004ED4D3 /* 2.png in Resources */,
+				9EDF3C091AD40E9D009A467B /* ZFGoHomeSetViewController.xib in Resources */,
+				9EDF3C1A1AD532FB009A467B /* AgreementViewController.xib in Resources */,
 				9E7231DC1A689D78004ED4D3 /* 5.png in Resources */,
 				9E4F66B51ACF781F00F15588 /* busDirection.png in Resources */,
 				9E85DB6C1AD2565700861D88 /* ChangCityViewController.xib in Resources */,
@@ -735,9 +770,12 @@
 				9EAA0DCB1A68A99D006FF072 /* WhereIsBusViewController.m in Sources */,
 				9EE9D3711AD0CCF300BC6F7C /* ZFSearchResultViewController.m in Sources */,
 				9EAA0DFC1A68A9FF006FF072 /* VersionUpgradeViewController.m in Sources */,
+				9EDF3C731AD5EF8F009A467B /* ZFRealTimeViewController.m in Sources */,
 				9EAA0DC81A68A99D006FF072 /* BusViewController.m in Sources */,
 				9E85DB651AD23DCB00861D88 /* AnnotationViewController.m in Sources */,
+				9EDF3C121AD4ECA6009A467B /* ZFOffLineDataViewController.m in Sources */,
 				9EAA0DED1A68A9DB006FF072 /* MapViewController.m in Sources */,
+				9EDF3C191AD532FB009A467B /* AgreementViewController.m in Sources */,
 				9EE9D3901AD1175000BC6F7C /* LineDeatialViewController.m in Sources */,
 				9EAA0DEC1A68A9DB006FF072 /* BaseMapViewController.m in Sources */,
 				9E7231911A6796D1004ED4D3 /* main.m in Sources */,
@@ -748,8 +786,8 @@
 				9E85DB6B1AD2565700861D88 /* ChangCityViewController.m in Sources */,
 				9EAA0DE61A68A9DB006FF072 /* BusLineViewController.m in Sources */,
 				9EAA0DE91A68A9DB006FF072 /* CommonUtility.m in Sources */,
-				9EAA0E001A68A9FF006FF072 /* TempViewController.m in Sources */,
 				9EAA0DBB1A68A934006FF072 /* ZFAnation.m in Sources */,
+				9EDF3C081AD40E9D009A467B /* ZFGoHomeSetViewController.m in Sources */,
 				9EAA0DEA1A68A9DB006FF072 /* BusStopDetailViewController.m in Sources */,
 				9EAA0DCA1A68A99D006FF072 /* GoHomeViewController.m in Sources */,
 				9EAA0DFB1A68A9FF006FF072 /* IdeaBackViewController.m in Sources */,
