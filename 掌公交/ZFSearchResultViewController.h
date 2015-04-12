@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZFSearchResultViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface ZFSearchResultViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NSURLConnectionDataDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIButton *frameButton;

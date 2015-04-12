@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZhanDianSearchResultViewController : UIViewController
+@interface ZhanDianSearchResultViewController : UIViewController<NSURLConnectionDataDelegate,UIAlertViewDelegate>
 @property (nonatomic,retain)NSString *zhandianValue;
 @end

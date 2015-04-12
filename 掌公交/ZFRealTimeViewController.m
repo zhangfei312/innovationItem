@@ -10,6 +10,7 @@
 
 @interface ZFRealTimeViewController (){
     NSMutableArray *_dataArray;
+    NSArray *dataArray;
 }
 
 @end
@@ -44,8 +45,13 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *myCell = [[UITableViewCell alloc]init];
     myCell.textLabel.text = _dataArray[indexPath.row];
-    if (0 <= [_dataArray[indexPath.row] intValue] <= 9) {
+    NSMutableString *str;
+    for (int i = 0; i < [dataArray count]; i++) {
+        str = [dataArray[i] valueForKey:@"ArrivalTime"];
+    }
+    if ((str == nil || str.length <= 0)) {
         myCell.image = [UIImage imageNamed:@"busLift.png"];
+        NSLog(@"%@",str);
     }
     return myCell;
 }
@@ -55,11 +61,11 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:inform]];
     NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
     NSDictionary *resultData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:&error];
-    NSArray *dataArray = [resultData valueForKey:@"result"];
+    dataArray = [resultData valueForKey:@"result"];
     for (int i = 0; i < [dataArray count]; i++) {
         NSString *str = [dataArray[i] valueForKey:@"ArrivalTime"];
         NSString *str2 = [dataArray[i] valueForKey:@"stationName"];
-        NSString *dataStr = [NSString stringWithFormat:@"%@        %@",str,str2];
+        NSString *dataStr = [NSString stringWithFormat:@"%@     %@",str2,str];
         [_dataArray addObject:dataStr];
     }
 }

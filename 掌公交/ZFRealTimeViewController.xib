@@ -24,7 +24,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView appearanceType="aqua" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="85G-yG-oGK">
-                    <rect key="frame" x="0.0" y="103" width="320" height="465"/>
+                    <rect key="frame" x="0.0" y="103" width="320" height="440"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
