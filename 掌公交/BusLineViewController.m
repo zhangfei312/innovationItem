@@ -12,7 +12,7 @@
 #import "BusStopAnnotation.h"
 #import "BusStopDetailViewController.h"
 
-#define BusLinePlaceHolder @"长春公交线路名称，如：13"
+#define BusLinePlaceHolder @"输入公交线路名称，如：13"
 
 @interface BusLineViewController ()<UISearchBarDelegate>{
     BOOL index;
@@ -161,10 +161,11 @@
     {
         return;
     }
-    
+    NSUserDefaults *gohomeSetting = [NSUserDefaults standardUserDefaults];
+    NSString *city = [gohomeSetting objectForKey:@"city"];
     AMapBusLineSearchRequest *line = [[AMapBusLineSearchRequest alloc] init];
     line.keywords           = key;
-    line.city               = @[@"changchun"];
+    line.city               = @[city];
     line.requireExtension   = YES;
     
     [self.search AMapBusLineSearch:line];

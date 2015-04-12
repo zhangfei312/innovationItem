@@ -17,6 +17,8 @@
     NSMutableArray *dataSource;//用于存放公交车信息
     NSMutableData *responseData;
     UIView *backview;
+    UIAlertView *alert;
+    NSURLConnection *conn;
 }
 @end
 
@@ -35,6 +37,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.delegate = self;
     dataSource = [[NSMutableArray alloc]init];
     [self requestBusInformation];
     _tableView.delegate = self;
@@ -109,7 +112,7 @@
     NSString *requestString = [NSString stringWithFormat:@"http://api.36wu.com/Bus/GetTransferInfo?city=%@&start=%@&end=%@&format=json",[city stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_startValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[_endValue stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:requestString]];
     request.timeoutInterval = 15.0;
-    NSURLConnection *conn=[NSURLConnection connectionWithRequest:request delegate:self];
+    conn=[NSURLConnection connectionWithRequest:request delegate:self];
     [conn start];
     NSLog(@"请求已经发出！");
     
@@ -170,7 +173,7 @@
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"请求错误");
     [backview removeFromSuperview];
-    UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"加载失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"加载失败" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
 }
 
@@ -179,5 +182,10 @@
     if (buttonIndex == 0) {
         NSLog(@"数据加载失败了!-----");
     }
+}
+- (void)viewDidDisappear:(BOOL)animated{
+    NSLog(@"返回了！！！！！！！");
+    conn = nil;
+    [backview removeFromSuperview];
 }
 @end
